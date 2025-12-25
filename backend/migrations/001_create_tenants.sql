@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS tenants (
+  id VARCHAR(36) PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  subdomain VARCHAR(100) NOT NULL UNIQUE,
+  status VARCHAR(20) NOT NULL DEFAULT 'active',
+  subscription_plan VARCHAR(20) NOT NULL DEFAULT 'free',
+  max_users INTEGER NOT NULL DEFAULT 5,
+  max_projects INTEGER NOT NULL DEFAULT 3,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_tenants_subdomain ON tenants(subdomain);
