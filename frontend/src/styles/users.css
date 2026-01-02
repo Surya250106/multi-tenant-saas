@@ -1,0 +1,81 @@
+.users-wrapper {
+  max-width: 1280px;
+  margin: auto;
+  padding: 32px 24px;
+}
+
+.users-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-filters {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.user-filters input,
+.user-filters select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #111827; /* dark input */
+  color: var(--text);
+}
+
+.user-filters input::placeholder {
+  color: var(--muted);
+}
+
+.users-table {
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.users-table th,
+.users-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ROLES */
+.role.tenant_admin {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.role.user {
+  background: rgba(156, 163, 175, 0.15);
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* STATUS */
+.status.active {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.status.inactive {
+  color: var(--error);
+  font-weight: 600;
+}
+
+/* ACTIONS */
+.actions button {
+  margin-right: 6px;
+}
+
+.actions .danger {
+  color: var(--error);
+}
