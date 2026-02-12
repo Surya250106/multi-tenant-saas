@@ -1,34 +1,40 @@
 # 🚀 Multi-Tenant SaaS Platform
 
-A production-ready, containerized multi-tenant SaaS application built
-with modern backend and frontend technologies. Designed to demonstrate
-scalable architecture, strict tenant isolation, secure authentication,
-and Docker-based deployment.
+A production-ready, containerized Multi-Tenant SaaS Application built
+using modern full-stack technologies. This project demonstrates scalable
+architecture, strict tenant isolation, secure authentication, and
+Docker-based deployment.
 
 ------------------------------------------------------------------------
 
 ## 📌 Overview
 
-This project implements a full-stack SaaS platform where:
+This platform allows multiple organizations (tenants) to operate
+independently within a single application instance.
 
--   Multiple organizations (tenants) operate independently
--   Each tenant manages its own users, projects, and tasks
--   Data isolation is strictly enforced
--   A system-level super admin has global visibility
+Each tenant can:
+
+-   Manage their own users
+-   Create and manage projects
+-   Assign and track tasks
+-   View dashboard statistics
+
+A system-level Super Admin has global access across all tenants.
 
 ------------------------------------------------------------------------
 
-## 🎯 Core Features
+## 🎯 Key Features
 
 -   Multi-tenant architecture with strict data isolation
--   Role-based access control (super_admin, tenant_admin, user)
+-   Role-Based Access Control (super_admin, tenant_admin, user)
 -   Secure JWT authentication
--   Tenant self-registration with automatic admin creation
--   Project and task management
--   Dashboard statistics
--   Automated PostgreSQL database initialization
--   Dockerized deployment
--   Health monitoring endpoint
+-   Tenant registration with automatic admin creation
+-   Project and task management system
+-   Dashboard with real-time statistics
+-   PostgreSQL relational database
+-   Fully containerized with Docker
+-   Automatic database initialization
+-   Health check endpoint
 
 ------------------------------------------------------------------------
 
@@ -44,8 +50,8 @@ This project implements a full-stack SaaS platform where:
 
 -   Node.js
 -   Express.js
--   jsonwebtoken
--   bcrypt
+-   JWT Authentication
+-   bcrypt password hashing
 -   express-validator
 
 ### Database
@@ -56,6 +62,15 @@ This project implements a full-stack SaaS platform where:
 
 -   Docker
 -   Docker Compose
+
+------------------------------------------------------------------------
+
+## 🔐 Multi-Tenancy Strategy
+
+-   Each user belongs to a specific tenant (except super_admin)
+-   JWT contains the tenant identifier
+-   All database queries are filtered by `tenant_id`
+-   Super admin has `tenant_id = NULL` for global access
 
 ------------------------------------------------------------------------
 
@@ -78,9 +93,10 @@ docker-compose up -d
 
 ------------------------------------------------------------------------
 
-## 🌐 Access
+## 🌐 Application Access
 
-Frontend: http://localhost:3000\
+Frontend: http://localhost:3000
+
 Backend Health Check: http://localhost:5000/api/health
 
 ------------------------------------------------------------------------
@@ -111,4 +127,4 @@ See: docs/API.md
 
 ## 📄 License
 
-MIT License --- Free for educational and commercial use.
+MIT License --- Free for educational or commercial use.
