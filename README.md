@@ -59,15 +59,6 @@ This project implements a full-stack SaaS platform where:
 
 ------------------------------------------------------------------------
 
-## 🔐 Multi-Tenancy Strategy
-
--   Each user belongs to a tenant (except super_admin)
--   JWT contains tenant identifier
--   Every database query is filtered by `tenant_id`
--   Super admin has global access (`tenant_id = NULL`)
-
-------------------------------------------------------------------------
-
 ## ⚙️ Installation & Setup
 
 ### Prerequisites
@@ -78,7 +69,8 @@ This project implements a full-stack SaaS platform where:
 
 ### Clone the Repository
 
-git clone `https://github.com/Surya250106/multi-tenant-saas`{=html} cd multi-tenant-saas
+git clone https://github.com/Surya250106/multi-tenant-saas cd
+multi-tenant-saas
 
 ### Start the Application
 
